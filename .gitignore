@@ -5,6 +5,12 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 
+
+# Added by Seung-Chan
+*.log
+*.exe
+
+
 # Visual Studio 2015 cache directory
 /.vs/
 
