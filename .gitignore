@@ -38,3 +38,8 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+
+.idea/
+.ipynb_checkpoints
+
