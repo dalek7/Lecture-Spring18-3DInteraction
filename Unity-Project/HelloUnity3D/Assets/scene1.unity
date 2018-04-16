@@ -194,7 +194,7 @@ Transform:
   m_GameObject: {fileID: 725722482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -313,7 +313,6 @@ GameObject:
   - component: {fileID: 1424195681}
   - component: {fileID: 1424195685}
   - component: {fileID: 1424195686}
-  - component: {fileID: 1424195687}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -420,20 +419,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
---- !u!114 &1424195687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1424195680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e10b301d5b6fac4db143fc43a131075, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 0
-  lastReceivedUDPPacket: 
-  allReceivedUDPPackets: 
 --- !u!1001 &1712761558
 Prefab:
   m_ObjectHideFlags: 0
