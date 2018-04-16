@@ -313,8 +313,9 @@ GameObject:
   - component: {fileID: 1424195681}
   - component: {fileID: 1424195685}
   - component: {fileID: 1424195686}
+  - component: {fileID: 1424195687}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,6 +420,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+--- !u!114 &1424195687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424195680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38c1716d49242574b87efe8d30356f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 0
+  lastReceivedUDPPacket: 
+  allReceivedUDPPackets: 
 --- !u!1001 &1712761558
 Prefab:
   m_ObjectHideFlags: 0
@@ -474,6 +489,10 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: f5f94539c8af2654a88aaa6c558ebe35,
         type: 2}
+    - target: {fileID: 1411806147711830, guid: bc1ccff98beb00e44bf45755321c2712, type: 2}
+      propertyPath: m_Name
+      value: Ball
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc1ccff98beb00e44bf45755321c2712, type: 2}
   m_IsPrefabParent: 0
