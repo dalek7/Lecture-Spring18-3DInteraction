@@ -43,3 +43,7 @@ sysinfo.txt
 .idea/
 .ipynb_checkpoints
 
+
+# Python-related
+*.py[cd]
+
