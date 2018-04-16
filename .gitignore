@@ -5,6 +5,8 @@
 /[Bb]uilds/
 /Assets/AssetStoreTools*
 
+aa_Data
+*_Data/
 
 # Added by Seung-Chan
 *.log
