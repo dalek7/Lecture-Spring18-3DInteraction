@@ -34,7 +34,7 @@ def on_release(key):
         return False
 
 
-def send(data, port=10000, addr='127.0.0.1'):
+def send(data, port=12345, addr='127.0.0.1'):
     """send(data[, port[, addr]]) - multicasts a UDP datagram."""
     # Create the socket
 
