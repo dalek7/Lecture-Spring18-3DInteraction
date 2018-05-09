@@ -6,13 +6,13 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour {
     public float speed;
     private Rigidbody rb;
-    private Joystick joystick;
+    //private Joystick joystick;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
         speed = 10;
-        joystick = FindObjectOfType<Joystick>();
+        //joystick = FindObjectOfType<Joystick>();
 
     }
 

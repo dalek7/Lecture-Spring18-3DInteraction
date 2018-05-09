@@ -94,21 +94,14 @@ public class UDPReceive : MonoBehaviour
     // receive thread
     private void ReceiveData()
     {
-
         client = new UdpClient(port);
         while (true)
         {
-
             try
             {
-                // Bytes empfangen.
                 IPEndPoint anyIP = new IPEndPoint(IPAddress.Any, 0);
                 byte[] data = client.Receive(ref anyIP);
-
-                // Bytes mit der UTF8-Kodierung in das Textformat kodieren.
                 string text = Encoding.UTF8.GetString(data);
-
-                // Den abgerufenen Text anzeigen.
                 print(">> " + text);
 
                 if(text.Trim().Equals("a"))
@@ -126,14 +119,9 @@ public class UDPReceive : MonoBehaviour
 					Vector3 movement = new Vector3(0, 0, 100);
 					rb.AddForce(movement);
 				}
-
-
                 // latest UDPpacket
                 lastReceivedUDPPacket = text;
-
-                // ....
                 allReceivedUDPPackets = allReceivedUDPPackets + text;
-
             }
             catch (Exception err)
             {
