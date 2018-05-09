@@ -12,6 +12,25 @@ aa_Data
 *.log
 *.exe
 
+## Unity3D
+ShaderCache/
+
+shadercompiler*
+ShaderCache.db
+PlayerDataCache/
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.unitypackage
+
+
 
 # Visual Studio 2015 cache directory
 /.vs/
