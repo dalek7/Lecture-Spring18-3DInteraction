@@ -27,7 +27,7 @@ public class UDPReceive : MonoBehaviour
     public string allReceivedUDPPackets = ""; // clean up this from time to time!
 
     private Rigidbody rb;
-    
+	private bool bdisplay = false;
 
     // start from shell
     private static void Main()
@@ -42,6 +42,7 @@ public class UDPReceive : MonoBehaviour
         }
         while (!text.Equals("exit"));
     }
+
     // start from unity3d
     public void Start()
     {
@@ -52,15 +53,18 @@ public class UDPReceive : MonoBehaviour
     // OnGUI
     void OnGUI()
     {
-        
-        Rect rectObj = new Rect(40, 10, 200, 400);
-        GUIStyle style = new GUIStyle();
-        style.alignment = TextAnchor.UpperLeft;
-        GUI.Box(rectObj, "# UDPReceive\n127.0.0.1 " + port + " #\n"
-                    + "shell> nc -u 127.0.0.1 : " + port + " \n"
-                    + "\nLast Packet: \n" + lastReceivedUDPPacket
-                    + "\n\nAll Messages: \n" + allReceivedUDPPackets
+		if (bdisplay) 
+		{
+			Rect rectObj = new Rect (40, 10, 200, 400);
+			GUIStyle style = new GUIStyle ();
+			style.alignment = TextAnchor.UpperLeft;
+			GUI.Box (rectObj, "# UDPReceive\n127.0.0.1 " + port + " #\n"
+			+ "shell> nc -u 127.0.0.1 : " + port + " \n"
+			+ "\nLast Packet: \n" + lastReceivedUDPPacket
+			+ "\n\nAll Messages: \n" + allReceivedUDPPackets
                 , style);
+		}
+        
     }
 
     // init
