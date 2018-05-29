@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 //using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Collider))]
-public class NewBehaviourScript : MonoBehaviour {
 
+public class NewBehaviourScript : MonoBehaviour {
 
     public float speed;
     private Rigidbody rb;
+	public AudioSource sound1;
     //private Joystick joystick;
 
 	private int count1;
@@ -35,6 +35,8 @@ public class NewBehaviourScript : MonoBehaviour {
         {
 			Jump(300.0F);
         }
+
+
 		/*
         else if(Input.GetMouseButtonDown(0) )
         {
@@ -75,6 +77,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		print(buf);
 		Vector3 movement = new Vector3(0, 1, 0);
 		rb.AddForce(300.0F * movement);
+		sound1.Play();
 	}
 
 	public void Jump(float pwr)
@@ -83,6 +86,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		print(count1++);
         Vector3 movement = new Vector3(0, 1, 0);
 		rb.AddForce(pwr * movement);
+		sound1.Play();
     }
 
 	public void Reset()
