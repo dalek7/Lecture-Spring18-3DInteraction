@@ -73,8 +73,6 @@ public class NewBehaviourScript : MonoBehaviour {
 
 	public void Jump()
 	{
-		string buf = string.Format ("Jump>%d", count1++);
-		print(buf);
 		Vector3 movement = new Vector3(0, 1, 0);
 		rb.AddForce(300.0F * movement);
 		sound1.Play();
