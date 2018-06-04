@@ -12,22 +12,16 @@ using System.Threading;
 
 public class UDPReceive : MonoBehaviour
 {
-    // receiving Thread
     Thread receiveThread;
-
-    // udpclient object
     UdpClient client;
-
-    // public
-    // public string IP = "127.0.0.1"; default local
-    public int port; // define > init
+    public int port; 
 
     // infos
     public string lastReceivedUDPPacket = "";
     public string allReceivedUDPPackets = ""; // clean up this from time to time!
 
     private Rigidbody rb;
-	private bool bdisplay = false;
+	private bool bdisplay = true;
 
     // start from shell
     private static void Main()
@@ -46,7 +40,6 @@ public class UDPReceive : MonoBehaviour
     // start from unity3d
     public void Start()
     {
-
         init();
     }
 
@@ -64,32 +57,19 @@ public class UDPReceive : MonoBehaviour
 			+ "\n\nAll Messages: \n" + allReceivedUDPPackets
                 , style);
 		}
-        
     }
 
     // init
     private void init()
     {
         rb = GetComponent<Rigidbody>();
-
-        // Endpunkt definieren, von dem die Nachrichten gesendet werden.
         print("UDPSend.init()");
         
-        // define port
 		port = 12345;
 
-        // status
-        //print("Sending to 127.0.0.1 : " + port);
-        //print("Test-Sending to this Port: nc -u 127.0.0.1  " + port + "");
-
-
-        // ----------------------------
-        // Abhören
-        // ----------------------------
-        // Lokalen Endpunkt definieren (wo Nachrichten empfangen werden).
-        // Einen neuen Thread für den Empfang eingehender Nachrichten erstellen.
         receiveThread = new Thread(
             new ThreadStart(ReceiveData));
+		
         receiveThread.IsBackground = true;
         receiveThread.Start();
 
@@ -108,19 +88,29 @@ public class UDPReceive : MonoBehaviour
                 string text = Encoding.UTF8.GetString(data);
                 print(">> " + text);
 
-                if(text.Trim().Equals("a"))
+				if(text.Trim().ToLower().Equals("a"))
                 {
                     Vector3 movement = new Vector3(-100, 0, 0);
                     rb.AddForce(movement);
                 }
-                else if (text.Trim().Equals("d"))
+				else if (text.Trim().ToLower().Equals("d"))
                 {
                     Vector3 movement = new Vector3(100, 0, 0);
                     rb.AddForce(movement);
                 }
-				else if(text.Trim().Equals("w"))
+				else if(text.Trim().ToLower().Equals("w"))
 				{
 					Vector3 movement = new Vector3(0, 0, 100);
+					rb.AddForce(movement);
+				}
+				else if(text.Trim().ToLower().Equals("s"))
+				{
+					Vector3 movement = new Vector3(0, 0, -100);
+					rb.AddForce(movement);
+				}
+				else if(text.Trim().ToLower().Equals("j"))
+				{
+					Vector3 movement = new Vector3(0, 300, 0);
 					rb.AddForce(movement);
 				}
                 // latest UDPpacket
@@ -149,6 +139,4 @@ public class UDPReceive : MonoBehaviour
 
         client.Close();
     }
-
-
 }
